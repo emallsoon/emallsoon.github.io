@@ -5,112 +5,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nanjing Emallsoon Information Technology Co., Ltd</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: fixed;
             width: 100%;
-            bottom: 0;
+            top: 0;
+            z-index: 100;
         }
-        .product, .service {
-            margin-bottom: 20px;
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-        .product img, .service img {
-            max-width: 100%;
-            height: auto;
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23004d99"/></svg>');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sections {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Emallsoon</h1>
+            </div>
+            <ul>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <h1>Nanjing Emallsoon Information Technology Co., Ltd</h1>
-</header>
-
-<nav>
-    <a href="#about">About Us</a>
-    <a href="#products">Our Products</a>
-    <a href="#services">Our Services</a>
-    <a href="#contact">Contact Us</a>
-</nav>
-
-<div class="container">
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a leading company specializing in the production of high-quality insulation materials. Our products are widely used in construction, industrial, and aerospace industries, providing reliable thermal insulation solutions.</p>
-    </section>
-
-    <section id="products">
-        <h2>Our Products</h2>
-        <div class="product">
-            <h3>Insulation Material A</h3>
-            <img src="product1.jpg" alt="Insulation Material A">
-            <p>Insulation Material A offers excellent thermal resistance, making it ideal for high-temperature environments.</p>
-        </div>
-        <div class="product">
-            <h3>Insulation Material B</h3>
-            <img src="product2.jpg" alt="Insulation Material B">
-            <p>Insulation Material B is lightweight and durable, perfect for various construction applications.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Leading Manufacturer of Insulation Materials</h2>
+            <p>Innovative solutions for thermal insulation needs across industries</p>
         </div>
     </section>
 
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service">
-            <h3>Custom Solutions</h3>
-            <img src="service1.jpg" alt="Custom Solutions">
-            <p>We provide customized insulation solutions tailored to meet the unique needs of our clients.</p>
-        </div>
-        <div class="service">
-            <h3>Technical Support</h3>
-            <img src="service2.jpg" alt="Technical Support">
-            <p>Our expert technical team is available to provide professional support and consultation services.</p>
-        </div>
-    </section>
+    <div class="sections">
+        <section id="products" class="section">
+            <h3>Our Products</h3>
+            <div class="products">
+                <div class="product-card">
+                    <h4>Thermal Insulation</h4>
+                    <p>High-performance thermal insulation materials for industrial applications</p>
+                </div>
+                <div class="product-card">
+                    <h4>Acoustic Insulation</h4>
+                    <p>Sound-dampening solutions for noise control</p>
+                </div>
+                <div class="product-card">
+                    <h4>Fire Protection</h4>
+                    <p>Fire-resistant materials for safety applications</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Address: 123 Some Road, Some District, Nanjing, China</p>
-        <p>Phone: +86 123 4567 890</p>
-        <p>Email: info@emallsoon.com</p>
-    </section>
-</div>
+        <section id="blog" class="section">
+            <h3>Latest Blog Posts</h3>
+            <div class="products">
+                <div class="product-card">
+                    <h4>Advances in Insulation Technology</h4>
+                    <p>Exploring the latest developments in thermal insulation materials</p>
+                </div>
+                <div class="product-card">
+                    <h4>Energy Efficiency Guide</h4>
+                    <p>Tips for maximizing energy efficiency with proper insulation</p>
+                </div>
+            </div>
+        </section>
 
-<footer>
-    <p>&copy; 2023 Nanjing Emallsoon Information Technology Co., Ltd. All rights reserved.</p>
-</footer>
+        <section id="about" class="section">
+            <h3>About Us</h3>
+            <p>Nanjing Emallsoon Information Technology Co., Ltd is a leading manufacturer of insulation materials, committed to providing innovative solutions for thermal management challenges. With years of experience and cutting-edge technology, we deliver high-quality products to customers worldwide.</p>
+        </section>
 
+        <section id="contact" class="section">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h4>Address</h4>
+                    <p>123 Technology Road, Nanjing, China</p>
+                </div>
+                <div class="contact-card">
+                    <h4>Email</h4>
+                    <p>info@emallsoon.com</p>
+                </div>
+                <div class="contact-card">
+                    <h4>Phone</h4>
+                    <p>+86 123 4567 8900</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Nanjing Emallsoon Information Technology Co., Ltd. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
